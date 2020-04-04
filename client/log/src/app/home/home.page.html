@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Registro de usuario
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Registro de usuario</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <form #userForm ="ngForm">
+
+    <ion-item>
+      <ion-label position="floating">Nombre:</ion-label>
+      <ion-input name="name" #name="ngModel" [(ngModel)]="userService.selectedUser.name" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">email:</ion-label>
+      <ion-input name="email" #email="ngModel" [(ngModel)]="userService.selectedUser.email" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">password:</ion-label>
+      <ion-input name="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" type="password"></ion-input>
+    </ion-item>
+    
+    <br>
+
+    <ion-button  [routerLink]="'/login'" (click)='addUser(userForm)'  expand="full"><ion-icon name="add-circle-outline" ></ion-icon></ion-button>
+   
+
+
+  </form>
+
+</ion-content>  
